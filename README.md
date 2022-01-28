@@ -18,8 +18,5 @@ You also want to make the website pleasant to use, to make it attractive to pote
 
 ### Todo
 
-Test for when you submit it should display to the console.
-
-### Improvements
-
-- Could separate out Javascript files into interface and index file
+- Test for submission of data displaying to the console.
+- When sorting table userdata disappears

@@ -7,15 +7,3 @@ export default class Player {
     this.nationality = "data.nationality";
   }
 }
-
-// let data = {
-//   firstName: "",
-//   lastName: "",
-//   email: "",
-//   favouritePokemon: "Pikachu",
-//   nationality: "",
-// };
-
-// let player = new Player(data);
-
-//let player = new Player();

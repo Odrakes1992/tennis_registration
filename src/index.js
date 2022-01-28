@@ -1,16 +1,4 @@
-//import Player from "./player.js";
-
-class Player {
-  constructor() {
-    this.firstName = "";
-    this.lastName = "";
-    this.email = "";
-    this.favouritePokemon = "data.favouritePokemon";
-    this.nationality = "data.nationality";
-  }
-}
-
-let playertwo = new Player();
+import Player from "./player.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Happy Days the Dom is working!");
@@ -36,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then((allpokemon) => {
-        //console.log(allpokemon);
         let pokemonObjectArray = allpokemon.results;
         pokemonObjectArray.forEach(getName);
         //console.log(allpokemon);
@@ -80,17 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
   pokedex();
   nationalityIndex();
 
-  function getValue(x) {
-    //let x = document.getElementById("#input-email").value;
-    console.log(x);
-  }
-
-  let x = document.getElementById("#first-name");
-  var xVal = "";
-  if (x) {
-    xVal = x.value;
-  }
-
   const inputData = {
     email: document.getElementById("input-email"),
     firstName: document.getElementById("first-name"),
@@ -99,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pokemon: document.getElementById("PokemonFormControlSelect"),
   };
 
-  //let playertwo = new Player();
+  let playertwo = new Player();
   //This is an inefficient way of changing the value, should refactor
   inputData.email.addEventListener(
     "change",
@@ -144,15 +120,13 @@ document.addEventListener("DOMContentLoaded", () => {
     var userObjectString = JSON.stringify(userData);
     window.sessionStorage.setItem("userObject", userObjectString);
     let example = sessionStorage.getItem("userObject");
-    console.log(example);
+    //console.log(JSON.stringify(example, null, 4));
   }
 
   document.querySelector("#register-button").addEventListener("click", (e) => {
     e.preventDefault();
-    //console.log(JSON.stringify(data, null, 4));
     storeUserDataInSession(playertwo);
     console.log(JSON.stringify(playertwo, null, 4));
     document.location.href = "html/welcome.html";
-    //console.log(playertwo);
   });
 });

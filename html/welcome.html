@@ -30,9 +30,16 @@
   </head>
 
   <body class="center">
-    <h1>Welcome</h1>
+    <br />
+    <h1>Queen's Club ♕</h1>
+    <br />
 
-    <p>Below is a current list of the players in the club.</p>
+    <p>
+      <strong
+        >Below is a current list of the players in the club and their points
+        total. Players move up the ranks by playing more matches 🎾</strong
+      >
+    </p>
     <div class="table-holder">
       <table
         data-toggle="table"
@@ -41,7 +48,7 @@
         data-sort-name="Points"
         data-sort-order="desc"
         id="dtBasicExample"
-        class="table table-striped table-bordered table-sm"
+        class="table table-bordered table-sm"
         cellspacing="0"
         width="100%"
       >
@@ -68,48 +75,56 @@
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="tennis-tablebody">
+          <tr class="table-light">
             <td>Andre</td>
             <td>Agassi</td>
             <td>Charmander</td>
-            <td>United States of America</td>
+            <td>United States of America 🇺🇸</td>
             <td>201125</td>
           </tr>
-          <tr>
+          <tr class="table-light">
             <td>Rod</td>
             <td>Laver</td>
             <td>Pikachu</td>
-            <td>Australia</td>
+            <td>Australia 🇦🇺</td>
             <td>1000</td>
           </tr>
-          <tr>
+          <tr class="table-light">
             <td>Bjorn</td>
             <td>Bjorg</td>
             <td>Kakuna</td>
-            <td>Sweden</td>
+            <td>Sweden 🇸🇪</td>
             <td>300</td>
           </tr>
 
-          <tr>
+          <tr class="table-light">
             <td>Shad</td>
             <td>Decker</td>
             <td>Raticate</td>
-            <td>United Kingdom</td>
+            <td>Germany 🇩🇪</td>
 
             <td>20</td>
           </tr>
-          <tr>
+          <tr class="table-light">
             <td>Steffi</td>
             <td>Graff</td>
             <td>Pidgeot</td>
-            <td>Germany</td>
+            <td>Germany 🇩🇪</td>
 
             <td>200823</td>
           </tr>
+
+          <tr class="table-light">
+            <td id="new-first"></td>
+            <td id="new-last"></td>
+            <td id="new-poke"></td>
+            <td id="new-nationality"></td>
+            <td id="new-points"></td>
+          </tr>
         </tbody>
         <tfoot>
-          <tr>
+          <tr class="table-light">
             <th>First Name</th>
             <th>Last Name</th>
             <th>Favourite Pokemon</th>
