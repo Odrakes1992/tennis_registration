@@ -7,18 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let pokemon = [];
   let nationalities = [];
 
-  data = {
-    pokemon: "Pikachu",
-    name: "Harry",
-    lastname: "Partirgde",
-    favouriteAnimal: {
-      dogs: "Monty",
-      cat: "Hemingway",
-    },
-    age: 10,
+  let data = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    favouritePokemon: "Pika",
+    nationality: "",
   };
-
-  console.log(JSON.stringify(data, null, 4));
 
   function getName(character) {
     pokemon.push(character.name);
@@ -79,7 +74,72 @@ document.addEventListener("DOMContentLoaded", () => {
   pokedex();
   nationalityIndex();
 
-  document.querySelector("#register-button").addEventListener("click", () => {
-    console.log(JSON.stringify(data));
+  // function logData(data) {
+  //   console.log(JSON.stringify(data, null, 4));
+  // }
+
+  function getValue(x) {
+    //let x = document.getElementById("#input-email").value;
+    console.log(x);
+  }
+
+  let x = document.getElementById("#first-name");
+  var xVal = "";
+  if (x) {
+    xVal = x.value;
+  }
+
+  const inputData = {
+    email: document.getElementById("input-email"),
+    firstName: document.getElementById("first-name"),
+    lastName: document.getElementById("last-name"),
+    nationality: document.getElementById("NationalityFormControlSelect"),
+    pokemon: document.getElementById("PokemonFormControlSelect"),
+  };
+
+  //This is an inefficient way of changing the value, should refactor
+  inputData.email.addEventListener(
+    "change",
+    ({ target }) => (data.email = target.value)
+  );
+
+  inputData.firstName.addEventListener(
+    "change",
+    ({ target }) => (data.firstName = target.value)
+  );
+
+  inputData.lastName.addEventListener(
+    "change",
+    ({ target }) => (data.lastName = target.value)
+  );
+
+  inputData.nationality.addEventListener(
+    "change",
+    ({ target }) => (data.nationality = target.value)
+  );
+
+  inputData.pokemon.addEventListener(
+    "change",
+    ({ target }) => (data.favouritePokemon = target.value)
+  );
+
+  // function error in console -  Cannot read properties of null
+  // var form = document.querySelector("#registration-form");
+  // form.addEventListener("change", function () {
+  //   data.email = document.getElementById("input-email").value;
+  //   data.firstName = document.getElementById("first-name").value;
+  //   data.lastName = document.getElementById("last-name").value;
+  //   data.favouritePokemon = document.getElementById(
+  //     "PokemonFormControlSelect"
+  //   ).value;
+  //   data.nationality = document.getElementById(
+  //     "iNationalityFormControlSelect"
+  //   ).value;
+  // });
+
+  document.querySelector("#register-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(JSON.stringify(data, null, 4));
+    //document.location.href = "html/welcome.html";
   });
 });

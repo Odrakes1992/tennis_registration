@@ -15,3 +15,11 @@ You also want to make the website pleasant to use, to make it attractive to pote
   - Countries – https://restcountries.com/
   - Pokémon – https://pokeapi.co/
   - Star Wars - https://swapi.dev/
+
+### Todo
+
+Test for when you submit it should display to the console.
+
+### Improvements
+
+- Could separate out Javascript files into interface and index file

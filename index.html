@@ -22,7 +22,12 @@
     <h2>Welcome to the tennis club, register below.</h2>
 
     <div class="form-holder">
-      <form role="form" data-toggle="validator" novalidate="true">
+      <form
+        role="form"
+        data-toggle="validator"
+        novalidate="true"
+        id="registration-form"
+      >
         <div class="row">
           <div class="col">
             <input
@@ -30,6 +35,7 @@
               class="form-control"
               placeholder="First name"
               required="required"
+              id="first-name"
               data-error="Please enter your name."
             />
             <div class="help-block with-errors"></div>
@@ -39,6 +45,7 @@
               type="text"
               class="form-control"
               placeholder="Last name"
+              id="last-name"
               required="required"
               data-error="Please enter your full name."
             />
@@ -50,7 +57,7 @@
           <input
             type="email"
             class="form-control"
-            id="exampleInputEmail1"
+            id="input-email"
             aria-describedby="emailHelp"
             placeholder="Enter email"
             required="required"
@@ -65,7 +72,7 @@
           <input
             type="password"
             class="form-control"
-            id="exampleInputPassword1"
+            id="input-password"
             placeholder="Password"
             required="required"
             data-error="Please enter a password."
@@ -75,27 +82,35 @@
         <br />
         <div class="form-group">
           <label for="exampleFormControlSelect1">Favourite Pokemon</label>
-          <select class="form-control" id="PokemonFormControlSelect"></select>
+          <select class="form-control" id="PokemonFormControlSelect">
+            <option></option>
+          </select>
         </div>
         <small id="emailHelp" class="form-text text-muted"
           >Select from the original 151.</small
         >
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Nationality</label>
-          <select
-            class="form-control"
-            id="NationalityFormControlSelect"
-          ></select>
+          <label for="exampleFormControlSelect2">Nationality</label>
+          <select class="form-control" id="NationalityFormControlSelect">
+            <option></option>
+          </select>
         </div>
         <br />
         <div>
-          <button id="register-button" type="submit" class="btn btn-warning">
+          <button
+            id="register-button"
+            type="submit"
+            value="submit"
+            class="btn btn-warning"
+          >
             Register
           </button>
         </div>
       </form>
     </div>
     <a href="html/welcome.html">About</a>
+
+    <button id="test-button" class="btn btn-primary">Test</button>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
