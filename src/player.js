@@ -3,7 +3,7 @@ export default class Player {
     this.firstName = "";
     this.lastName = "";
     this.email = "";
-    this.favouritePokemon = "data.favouritePokemon";
-    this.nationality = "data.nationality";
+    this.favouritePokemon = "";
+    this.nationality = "";
   }
 }

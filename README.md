@@ -20,3 +20,7 @@ You also want to make the website pleasant to use, to make it attractive to pote
 
 - Test for submission of data displaying to the console.
 - When sorting table userdata disappears
+
+## Application
+
+run index.html in local server
