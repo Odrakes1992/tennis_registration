@@ -1,3 +1,17 @@
+//import Player from "./player.js";
+
+class Player {
+  constructor() {
+    this.firstName = "";
+    this.lastName = "";
+    this.email = "";
+    this.favouritePokemon = "data.favouritePokemon";
+    this.nationality = "data.nationality";
+  }
+}
+
+let playertwo = new Player();
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Happy Days the Dom is working!");
 
@@ -6,14 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let pokemon = [];
   let nationalities = [];
-
-  let data = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    favouritePokemon: "Pika",
-    nationality: "",
-  };
 
   function getName(character) {
     pokemon.push(character.name);
@@ -31,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((allpokemon) => {
         //console.log(allpokemon);
-        pokemonObjectArray = allpokemon.results;
+        let pokemonObjectArray = allpokemon.results;
         pokemonObjectArray.forEach(getName);
-        //console.log(pokemon);
+        //console.log(allpokemon);
         createPokemonDropdown();
       });
   }
@@ -74,10 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   pokedex();
   nationalityIndex();
 
-  // function logData(data) {
-  //   console.log(JSON.stringify(data, null, 4));
-  // }
-
   function getValue(x) {
     //let x = document.getElementById("#input-email").value;
     console.log(x);
@@ -97,30 +99,31 @@ document.addEventListener("DOMContentLoaded", () => {
     pokemon: document.getElementById("PokemonFormControlSelect"),
   };
 
+  //let playertwo = new Player();
   //This is an inefficient way of changing the value, should refactor
   inputData.email.addEventListener(
     "change",
-    ({ target }) => (data.email = target.value)
+    ({ target }) => (playertwo.email = target.value)
   );
 
   inputData.firstName.addEventListener(
     "change",
-    ({ target }) => (data.firstName = target.value)
+    ({ target }) => (playertwo.firstName = target.value)
   );
 
   inputData.lastName.addEventListener(
     "change",
-    ({ target }) => (data.lastName = target.value)
+    ({ target }) => (playertwo.lastName = target.value)
   );
 
   inputData.nationality.addEventListener(
     "change",
-    ({ target }) => (data.nationality = target.value)
+    ({ target }) => (playertwo.nationality = target.value)
   );
 
   inputData.pokemon.addEventListener(
     "change",
-    ({ target }) => (data.favouritePokemon = target.value)
+    ({ target }) => (playertwo.favouritePokemon = target.value)
   );
 
   // function error in console -  Cannot read properties of null
@@ -137,9 +140,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //   ).value;
   // });
 
+  function storeUserDataInSession(userData) {
+    var userObjectString = JSON.stringify(userData);
+    window.sessionStorage.setItem("userObject", userObjectString);
+    let example = sessionStorage.getItem("userObject");
+    console.log(example);
+  }
+
   document.querySelector("#register-button").addEventListener("click", (e) => {
     e.preventDefault();
+    //console.log(JSON.stringify(data, null, 4));
+    storeUserDataInSession(playertwo);
+    console.log(JSON.stringify(playertwo, null, 4));
     document.location.href = "html/welcome.html";
-    console.log(JSON.stringify(data, null, 4));
+    //console.log(playertwo);
   });
 });
