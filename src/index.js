@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector("#register-button").addEventListener("click", (e) => {
     e.preventDefault();
+    document.location.href = "html/welcome.html";
     console.log(JSON.stringify(data, null, 4));
-    //document.location.href = "html/welcome.html";
   });
 });
