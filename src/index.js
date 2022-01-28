@@ -7,6 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let pokemon = [];
   let nationalities = [];
 
+  data = {
+    pokemon: "Pikachu",
+    name: "Harry",
+    lastname: "Partirgde",
+    favouriteAnimal: {
+      dogs: "Monty",
+      cat: "Hemingway",
+    },
+    age: 10,
+  };
+
+  console.log(JSON.stringify(data, null, 4));
+
   function getName(character) {
     pokemon.push(character.name);
   }
@@ -67,6 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   nationalityIndex();
 
   document.querySelector("#register-button").addEventListener("click", () => {
-    console.log("pressed");
+    console.log(JSON.stringify(data));
   });
 });
